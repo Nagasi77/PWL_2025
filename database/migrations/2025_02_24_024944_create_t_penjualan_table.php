@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,9 +12,10 @@ return new class extends Migration
     {
         Schema::create('t_penjualan', function (Blueprint $table) {
             $table->id('penjualan_id');
+            $table->string('penjualan_kode', 20)->default('-'); // Default value '-' 
+
             $table->unsignedBigInteger('user_id');
             $table->string('pembeli', 50);
-            $table->string('penjualan_kode', 20);
             $table->dateTime('penjualan_tanggal');
             $table->timestamps();
 
