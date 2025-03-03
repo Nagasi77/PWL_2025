@@ -12,14 +12,19 @@
                 <th>Nama</th>
                 <th>ID Level Pengguna</th>
             </tr>
-            @foreach ($data as $d)
+            @if ($data)
             <tr>
-                <td>{{ $d->level_id }}</td>
-                <td>{{ $d->username }}</td>
-                <td>{{ $d->nama }}</td>
-                <td>{{ $d->level_id }}</td>
+                <td>{{ $data->user_id }}</td>
+                <td>{{ $data->username }}</td>
+                <td>{{ $data->nama }}</td>
+                <td>{{ $data->level_id }}</td>
             </tr>
-            @endforeach
+        @else
+            <tr>
+                <td colspan="4">Data tidak ditemukan</td>
+            </tr>
+        @endif
+        
         </table>
     </body>
 </html>
