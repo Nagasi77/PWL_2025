@@ -7,8 +7,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SalesController;
 
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\kategoriController;
 
 Route::get('/level', [LevelController::class, 'index']);
+Route::get('/kategori', [KategoriController::class, 'index']);
 
 Route::get('/home', HomeController::class);
 
