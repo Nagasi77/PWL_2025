@@ -25,13 +25,13 @@ class KategoriController extends Controller
 //
 //        return 'Update data berhasil. Jumlah data yang diupdate: ' . $row . ' baris';
 
-       $row = DB::table('m_kategori')
-           ->where('kategori_kode', 'SNK')
-           ->delete();
+    //    $row = DB::table('m_kategori')
+    //        ->where('kategori_kode', 'SNK')
+    //        ->delete();
 
-       return 'Hapus data berhasil. Jumlah data yang dihapus: ' . $row . ' baris';
+    //    return 'Hapus data berhasil. Jumlah data yang dihapus: ' . $row . ' baris';
 
-// $data = DB:: table('m_kategori')->get();
-// return view('kategori', ['data' => $data]);
+$data = DB:: table('m_kategori')->get();
+return view('kategori', ['data' => $data]);
     }
 }
