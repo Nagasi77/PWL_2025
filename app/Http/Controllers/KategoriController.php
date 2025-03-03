@@ -25,6 +25,7 @@ class KategoriController extends Controller
 //
 //        return 'Update data berhasil. Jumlah data yang diupdate: ' . $row . ' baris';
 
+<<<<<<< HEAD
        $row = DB::table('m_kategori')
            ->where('kategori_kode', 'SNK')
            ->delete();
@@ -33,5 +34,15 @@ class KategoriController extends Controller
 
 // $data = DB:: table('m_kategori')->get();
 // return view('kategori', ['data' => $data]);
+=======
+//        $row = DB::table('m_kategori')
+//            ->where('kategori_kode', 'SNK')
+//            ->delete();
+//
+//        return 'Hapus data berhasil. Jumlah data yang dihapus: ' . $row . ' baris';
+
+$data = DB:: table('m_kategori')->get();
+return view('kategori', ['data' => $data]);
+>>>>>>> 6072d7858947658bfdd79e3e81d271693d3f9886
     }
 }
