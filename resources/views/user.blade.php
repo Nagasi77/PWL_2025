@@ -1,32 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Data User</title>
-    </head>
-    <body>
-        <h1>Data User</h1>
-        <a href="/user/tambah"> Tambah User</a>
-        <table border="1" cellpadding="2" cellspacing="0">
-            <tr>
-                <td>ID</td>
-                <td>Username</td>
-                <td>Nama</td>
-                <td>ID Level Pengguna</td>
-                <td>Aksi</td>
-            </tr>
-            @foreach ($data as $d)
-            <tr>
-                <td>{{ $d->user_id }}</td>
-                <td>{{ $d->username }}</td>
-                <td>{{ $d->nama }}</td>
-                <td>{{ $d->level_id }}</td>
-                <td>
-                    <a href="/user/ubah/{{ $d->user_id }}">Ubah</a> | 
-                    <a href="/user/hapus/{{ $d->user_id }}">Hapus</a>
-                </td>
-            </tr>
-            @endforeach
-        </table>
-    </body>
-    
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pengguna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .detail {
+            margin-top: 10px;
+        }
+        .detail p {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Detail Pengguna</h1>
+
+    @if($data)
+        <div class="detail">
+            <p><strong>ID:</strong> {{ $data->user_id }}</p>
+            <p><strong>Username:</strong> {{ $data->username }}</p>
+            <p><strong>Nama:</strong> {{ $data->nama }}</p>
+            <p><strong>ID Level Pengguna:</strong> {{ $data->level_id }}</p>
+        </div>
+    @else
+        <p>Data pengguna tidak ditemukan.</p>
+    @endif
+
+    <a href="{{ url('/') }}" class="back-btn">Kembali</a>
+</div>
+</body>
 </html>
