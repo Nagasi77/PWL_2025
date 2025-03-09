@@ -8,7 +8,9 @@ use App\Http\Controllers\SalesController;
 
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\kategoriController;
+use App\Http\Controllers\WelcomeController;
 
+Route::get('/', [WelcomeController::class, 'index']);
 Route::get('/level', [LevelController::class, 'index']);
 Route::get('/kategori', [KategoriController::class, 'index']);
 
@@ -38,5 +40,4 @@ Route::get('/user/hapus/{id}', [UserController::class, 'hapus']);
 
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/', function () {
-    return view('welcome');
 });
