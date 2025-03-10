@@ -31,7 +31,8 @@ class UserController extends Controller
             'level' => $level,
             'activeMenu' => $activeMenu]);
     }
-
+ 
+    
     public function list(Request $request)
     {
         $users = UserModel::select('user_id', 'username', 'nama', 'level_id')
@@ -166,7 +167,7 @@ class UserController extends Controller
 
         return redirect('/user')->with('success', 'Data user berhasil diubah');
     }
-    
+
     // Menghapus data user
     public function destroy(string $id)
     {
